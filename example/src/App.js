@@ -7,6 +7,9 @@ import 'react-dropdown-material/dist/index.css';
 const App = () => {
   return (
     <div className='App'>
+      <span className='Title'>
+        React DropDown Material
+     </span>
       <DropDown
         className='DropDown'
         placeholder='Select OS'

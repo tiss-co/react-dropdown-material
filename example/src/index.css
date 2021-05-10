@@ -3,7 +3,18 @@
   height: 100vh;
   background-color: #f7f7f7;
   display: flex;
-  align-items: flex-start;
-  justify-content: center;
+  flex-flow: column;
+  align-items: center;
+  justify-content: flex-start;
   padding-top: 50px;
+}
+
+.Title {
+  text-align: center;
+  font-size: 50px;
+  font-weight: bold;
+}
+
+.DropDown {
+  margin-top: 10px;
 }
