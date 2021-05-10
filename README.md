@@ -1,26 +1,56 @@
 # react-dropdown-material
 
-> Made with create-react-library
+>
 
 [![NPM](https://img.shields.io/npm/v/react-dropdown-material.svg)](https://www.npmjs.com/package/react-dropdown-material) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
 ## Install
 
 ```bash
-npm install --save react-dropdown-material
+npm i react-dropdown-material
+```
+or
+```bash
+yarn add react-dropdown-material
 ```
 
 ## Usage
 
+### JS:
+
 ```jsx
-import React, { Component } from 'react'
+import React from 'react';
 
-import MyComponent from 'react-dropdown-material'
-import 'react-dropdown-material/dist/index.css'
+import { DropDown } from 'react-dropdown-material';
+import 'react-dropdown-material/dist/index.css';
 
-class Example extends Component {
-  render() {
-    return <MyComponent />
+const App = () => {
+  return (
+    <DropDown
+      className='DropDown'
+      placeholder='Select OS'
+      title='OS List'
+      items={['Windows', 'Mac OS', 'Linux']}
+      onItemSelect={(index, item) => console.log(`"${item}" selected`)}
+      selectFirstItem={false}
+      darkMode={false}
+    />
+  )
+}
+
+export default App
+```
+
+### CSS:
+
+```scss
+.DropDown {
+  button {
+    //DropDown button
+  }
+
+  ul li {
+    //DropDown items
   }
 }
 ```

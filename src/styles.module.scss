@@ -1,0 +1,158 @@
+$screen_width_HD: 1280px;
+$font-family-medium: Helvetica-Neue-Medium;
+
+:root {
+  --button-padding: 8px 15px;
+  --down-icon-size: 6px;
+  --down-icon-margin-left: 5px;
+  --menu-title-bg-color: #f2f2f2;
+  --menu-min-width: 130px;
+  --font-size-xx-small: calc((12px + 0.35vw) * 0.6);
+  --font-size-x-small: calc((12px + 0.35vw) * 0.7);
+  --font-size-small: calc((12px + 0.35vw) * 0.8);
+  --font-size-medium: calc((12px + 0.35vw) * 0.9);
+
+  @media (max-width: $screen_width_HD) {
+    --button-padding: 7.5px 20px;
+    --down-icon-size: 10px;
+    --down-icon-margin-left: 5px;
+  }
+
+  //mobile
+  @media (hover: none) and (pointer: coarse) and (orientation: portrait) {
+    --button-padding: 5px 10px;
+    --down-icon-size: 7px;
+    --down-icon-margin-left: 5px;
+    --menu-min-width: 90px;
+  }
+
+  //mobile
+  @media (hover: none) and (pointer: coarse) and (orientation: landscape) {
+    --button-padding: 5px 10px;
+    --down-icon-size: 10px;
+    --down-icon-margin-left: 5px;
+    --menu-min-width: 90px;
+  }
+}
+
+.DropDown {
+  width: auto !important;
+  font-family: $font-family-medium;
+}
+
+.Button {
+  background-color: #1977f2 !important;
+  font-family: $font-family-medium !important;
+  font-size: var(--font-size-x-small) !important;
+  color: #f7f7f7 !important;
+  text-transform: none !important;
+  padding: var(--button-padding) !important;
+  white-space: nowrap !important;
+  @media (max-width: $screen_width_HD) {
+    font-size: var(--font-size-medium) !important;
+  }
+
+  svg {
+    width: var(--down-icon-size);
+    height: var(--down-icon-size);
+    fill: #f7f7f7 !important;
+    margin-left: var(--down-icon-margin-left);
+  }
+
+  &.White {
+    background-color: #e6e7eb !important;
+    color: #2a2a2a !important;
+    svg {
+      fill: #2a2a2a !important;
+    }
+  }
+}
+
+.Menu {
+  margin-top: 3px !important;
+  ul {
+    background-color: #ffffff !important;
+    width: inherit !important;
+    li {
+      color: #2a2a2a;
+      font-size: var(--font-size-xx-small) !important;
+      font-family: $font-family-medium !important;
+      align-items: center;
+      justify-content: flex-start;
+      @media (max-width: $screen_width_HD) {
+        font-size: var(--font-size-small) !important;
+      }
+      //mobile
+      @media (hover: none) and (pointer: coarse) {
+        padding: 0 10px !important;
+      }
+      > svg {
+        width: calc(var(--down-icon-size) + 0.1vw);
+        height: calc(var(--down-icon-size) + 0.1vw);
+        fill: #1b1b1b !important;
+        position: absolute;
+        right: 15px;
+      }
+      &:hover {
+        background-color: #e6e7eb !important;
+      }
+    }
+    .TitleMenuItem {
+      margin-top: -2px !important;
+      padding: 5px !important;
+      cursor: default !important;
+      &:hover,
+      &::selection {
+        padding: 5px !important;
+        cursor: default !important;
+        background-color: #e6e7eb !important;
+      }
+      .MenuTitle {
+        border: 1px solid #1977f2;
+        border-radius: 4px;
+        width: 100%;
+        height: 100%;
+        padding: 5px 10px;
+        font-family: $font-family-medium !important;
+        font-size: var(--font-size-xx-small);
+        color: #2a2a2a;
+        @media (max-width: $screen_width_HD) {
+          font-size: var(--font-size-small) !important;
+        }
+        //mobile
+        @media (hover: none) and (pointer: coarse) {
+          padding: 5px 10px !important;
+        }
+      }
+    }
+    .OtherMenuItem {
+      padding: 7px 25px 7px 15px !important;
+    }
+  }
+  &.Dark ul {
+    background-color: #242526 !important;
+    li {
+      color: #f7f7f7;
+      > svg {
+        fill: #f7f7f7 !important;
+      }
+      &:hover {
+        background-color: #3a3b3c !important;
+      }
+    }
+    .TitleMenuItem {
+      &:hover,
+      &::selection {
+        background-color: #3a3b3c !important;
+      }
+      .MenuTitle {
+        color: #f7f7f7;
+      }
+    }
+  }
+}
+
+.MenuPaper {
+  background-color: transparent !important;
+  min-width: var(--menu-min-width) !important;
+}
