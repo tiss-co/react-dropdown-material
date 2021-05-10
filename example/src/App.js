@@ -1,10 +1,24 @@
-import React from 'react'
+import React from 'react';
+import './index.css';
 
-import { ExampleComponent } from 'react-dropdown-material'
-import 'react-dropdown-material/dist/index.css'
+import { DropDown } from 'react-dropdown-material';
+import 'react-dropdown-material/dist/index.css';
 
 const App = () => {
-  return <ExampleComponent text="Create React Library Example 😄" />
-}
+  return (
+    <div className='App'>
+      <DropDown
+        className='DropDown'
+        placeholder='Select OS'
+        title='OS List'
+        items={['Windows', 'Mac OS', 'Linux']}
+        onItemSelect={(index, item) => console.log(`"${item}" selected`)}
+        selectFirstItem={false}
+        whiteBackground={false}
+        darkMode={false}
+      />
+    </div>
+  );
+};
 
-export default App
+export default App;
