@@ -35,10 +35,10 @@ export const DropDown = ({
 
 
   return (
-    <Box className={classNames(css.DropDown, className)}>
+    <Box className={classNames(css.DropDown_DropDownMaterial, className)}>
       <Button
-        className={classNames(css.Button, {
-          [css.White]: whiteBackground,
+        className={classNames(css.Button_DropDownMaterial, {
+          [css.White_DropDownMaterial]: whiteBackground,
         })}
         onClick={e => setMenuAnchor(e.currentTarget)}
       >
@@ -46,8 +46,8 @@ export const DropDown = ({
         <DownIcon />
       </Button>
       <Menu
-        className={classNames(css.Menu, {
-          [css.Dark]: darkMode
+        className={classNames(css.Menu_DropDownMaterial, {
+          [css.Dark_DropDownMaterial]: darkMode
         })}
         anchorEl={menuAnchor}
         open={Boolean(menuAnchor)}
@@ -61,15 +61,15 @@ export const DropDown = ({
           vertical: 'top',
           horizontal: 'center',
         }}
-        PaperProps={{ className: css.MenuPaper }}
+        PaperProps={{ className: css.MenuPaper_DropDownMaterial }}
       >
-        <MenuItem className={css.TitleMenuItem}>
-          <span className={css.MenuTitle}>{title}</span>
+        <MenuItem className={css.TitleMenuItem_DropDownMaterial}>
+          <span className={css.MenuTitle_DropDownMaterial}>{title}</span>
         </MenuItem>
         {items?.length > 0 &&
           items.map((item, index) => (
             <MenuItem
-              className={css.OtherMenuItem}
+              className={css.OtherMenuItem_DropDownMaterial}
               key={index + '0'}
               onClick={() => onSelect(index, item)}
             >

@@ -35,12 +35,12 @@ $font-family-medium: Helvetica-Neue-Medium;
   }
 }
 
-.DropDown {
+.DropDown_DropDownMaterial {
   width: auto !important;
   font-family: $font-family-medium;
 }
 
-.Button {
+.Button_DropDownMaterial {
   background-color: #1977f2 !important;
   font-family: $font-family-medium !important;
   font-size: var(--font-size-x-small) !important;
@@ -59,7 +59,7 @@ $font-family-medium: Helvetica-Neue-Medium;
     margin-left: var(--down-icon-margin-left);
   }
 
-  &.White {
+  &.White_DropDownMaterial {
     background-color: #e6e7eb !important;
     color: #2a2a2a !important;
     svg {
@@ -68,7 +68,7 @@ $font-family-medium: Helvetica-Neue-Medium;
   }
 }
 
-.Menu {
+.Menu_DropDownMaterial {
   margin-top: 3px !important;
   ul {
     background-color: #ffffff !important;
@@ -97,7 +97,7 @@ $font-family-medium: Helvetica-Neue-Medium;
         background-color: #e6e7eb !important;
       }
     }
-    .TitleMenuItem {
+    .TitleMenuItem_DropDownMaterial {
       margin-top: -2px !important;
       padding: 5px !important;
       cursor: default !important;
@@ -107,7 +107,7 @@ $font-family-medium: Helvetica-Neue-Medium;
         cursor: default !important;
         background-color: #e6e7eb !important;
       }
-      .MenuTitle {
+      .MenuTitle_DropDownMaterial {
         border: 1px solid #1977f2;
         border-radius: 4px;
         width: 100%;
@@ -125,11 +125,11 @@ $font-family-medium: Helvetica-Neue-Medium;
         }
       }
     }
-    .OtherMenuItem {
+    .OtherMenuItem_DropDownMaterial {
       padding: 7px 25px 7px 15px !important;
     }
   }
-  &.Dark ul {
+  &.Dark_DropDownMaterial ul {
     background-color: #242526 !important;
     li {
       color: #f7f7f7;
@@ -140,19 +140,19 @@ $font-family-medium: Helvetica-Neue-Medium;
         background-color: #3a3b3c !important;
       }
     }
-    .TitleMenuItem {
+    .TitleMenuItem_DropDownMaterial {
       &:hover,
       &::selection {
         background-color: #3a3b3c !important;
       }
-      .MenuTitle {
+      .MenuTitle_DropDownMaterial {
         color: #f7f7f7;
       }
     }
   }
 }
 
-.MenuPaper {
+.MenuPaper_DropDownMaterial {
   background-color: transparent !important;
   min-width: var(--menu-min-width) !important;
 }
