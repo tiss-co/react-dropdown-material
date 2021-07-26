@@ -13,7 +13,8 @@ export const DropDown = ({
   placeholder,
   selectFirstItem = false,
   whiteBackground = false,
-  darkMode = false
+  darkMode = false,
+  downIcon,
 }) => {
   const [menuAnchor, setMenuAnchor] = useState(null);
   const [selectedItem, setSelectedItem] = useState('');
@@ -43,7 +44,7 @@ export const DropDown = ({
         onClick={e => setMenuAnchor(e.currentTarget)}
       >
         {selectedItem || placeholder}
-        <DownIcon />
+        {downIcon || <DownIcon />}
       </Button>
       <Menu
         className={classNames(css.Menu_DropDownMaterial, {
@@ -93,4 +94,5 @@ DropDown.propTypes = {
   selectFirstItem: PropTypes.bool,
   whiteBackground: PropTypes.bool,
   darkMode: PropTypes.bool,
+  downIcon: PropTypes.object,
 };
