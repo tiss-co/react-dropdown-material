@@ -15,6 +15,7 @@ export const DropDown = ({
   whiteBackground = false,
   darkMode = false,
   downIcon,
+  updateDropDown = { current: () => { } },
 }) => {
   const [menuAnchor, setMenuAnchor] = useState(null);
   const [selectedItem, setSelectedItem] = useState('');
@@ -25,9 +26,13 @@ export const DropDown = ({
     onItemSelect(index, item);
   };
 
-  const updateSelectedItem = () => {
-    onItemSelect(0, items?.[0] || '');
-    setSelectedItem(items?.[0] || '');
+  const updateSelectedItem = (item = items?.[0] || '') => {
+    onItemSelect(0, item);
+    setSelectedItem(item);
+  };
+
+  updateDropDown.current = item => {
+    updateSelectedItem(item);
   };
 
   useEffect(() => {
@@ -95,4 +100,5 @@ DropDown.propTypes = {
   whiteBackground: PropTypes.bool,
   darkMode: PropTypes.bool,
   downIcon: PropTypes.object,
+  updateDropDown: PropTypes.shape({ current: PropTypes.func })
 };
