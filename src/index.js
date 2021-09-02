@@ -77,7 +77,8 @@ export const DropDown = ({
             <MenuItem
               className={css.OtherMenuItem_DropDownMaterial}
               key={index + '0'}
-              onClick={() => onSelect(index, item)}
+              onClick={() => onSelect(index,
+                selectedItem !== item ? item : null)}
             >
               {item}
               {item === selectedItem && (
