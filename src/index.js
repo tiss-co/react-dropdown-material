@@ -22,8 +22,8 @@ export const DropDown = ({
   const [selectedItem, setSelectedItem] = useState('');
 
   const onSelect = (index, item) => {
-    setMenuAnchor(null);
     setSelectedItem(item);
+    setMenuAnchor(null);
     onItemSelect(index, item);
   };
 
