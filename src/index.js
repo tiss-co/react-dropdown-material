@@ -16,6 +16,7 @@ export const DropDown = ({
   darkMode = false,
   downIcon,
   updateDropDown = { current: () => { } },
+  allowDisable = true
 }) => {
   const [menuAnchor, setMenuAnchor] = useState(null);
   const [selectedItem, setSelectedItem] = useState('');
@@ -78,7 +79,7 @@ export const DropDown = ({
               className={css.OtherMenuItem_DropDownMaterial}
               key={index + '0'}
               onClick={() => onSelect(index,
-                selectedItem !== item ? item : null)}
+                (selectedItem === item && allowDisable) ? null : item)}
             >
               {item}
               {item === selectedItem && (
@@ -101,5 +102,6 @@ DropDown.propTypes = {
   whiteBackground: PropTypes.bool,
   darkMode: PropTypes.bool,
   downIcon: PropTypes.object,
-  updateDropDown: PropTypes.shape({ current: PropTypes.func })
+  updateDropDown: PropTypes.shape({ current: PropTypes.func }),
+  allowDisable: PropTypes.bool,
 };
