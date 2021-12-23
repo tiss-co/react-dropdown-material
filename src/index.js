@@ -15,6 +15,7 @@ export const DropDown = ({
   whiteBackground = false,
   darkMode = false,
   downIcon,
+  startIcon,
   updateDropDown = { current: () => { } },
   allowDisable = true
 }) => {
@@ -48,9 +49,10 @@ export const DropDown = ({
           [css.White_DropDownMaterial]: whiteBackground,
         })}
         onClick={e => setMenuAnchor(e.currentTarget)}
+        startIcon={startIcon}
+        endIcon={downIcon || <DownIcon />}
       >
         {selectedItem || placeholder}
-        {downIcon || <DownIcon />}
       </Button>
       <Menu
         className={classNames(css.Menu_DropDownMaterial, {
@@ -102,6 +104,7 @@ DropDown.propTypes = {
   whiteBackground: PropTypes.bool,
   darkMode: PropTypes.bool,
   downIcon: PropTypes.object,
+  startIcon: PropTypes.object,
   updateDropDown: PropTypes.shape({ current: PropTypes.func }),
   allowDisable: PropTypes.bool,
 };
