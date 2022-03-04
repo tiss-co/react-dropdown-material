@@ -72,9 +72,12 @@ export const DropDown = ({
         }}
         PaperProps={{ className: css.MenuPaper_DropDownMaterial }}
       >
-        <MenuItem className={css.TitleMenuItem_DropDownMaterial}>
-          <span className={css.MenuTitle_DropDownMaterial}>{title}</span>
-        </MenuItem>
+        {
+          title &&
+          <MenuItem className={css.TitleMenuItem_DropDownMaterial}>
+            <span className={css.MenuTitle_DropDownMaterial}>{title}</span>
+          </MenuItem>
+        }
         {items?.length > 0 &&
           items.map((item, index) => (
             <MenuItem
