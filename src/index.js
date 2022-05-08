@@ -17,7 +17,10 @@ export const DropDown = ({
   downIcon,
   startIcon,
   updateDropDown = { current: () => { } },
-  allowDisable = true
+  allowDisable = true,
+  containerId,
+  buttonId,
+  menuId,
 }) => {
   const [menuAnchor, setMenuAnchor] = useState(null);
   const [selectedItem, setSelectedItem] = useState('');
@@ -43,7 +46,7 @@ export const DropDown = ({
 
 
   return (
-    <Box className={classNames(css.DropDown_DropDownMaterial, className)}>
+    <Box className={classNames(css.DropDown_DropDownMaterial, className)} id={containerId}>
       <Button
         className={classNames(css.Button_DropDownMaterial, {
           [css.White_DropDownMaterial]: whiteBackground,
@@ -51,6 +54,7 @@ export const DropDown = ({
         onClick={e => setMenuAnchor(e.currentTarget)}
         startIcon={startIcon}
         endIcon={downIcon || <DownIcon />}
+        id={buttonId}
       >
         {selectedItem || placeholder}
       </Button>
@@ -71,6 +75,7 @@ export const DropDown = ({
           horizontal: 'center',
         }}
         PaperProps={{ className: css.MenuPaper_DropDownMaterial }}
+        id={menuId}
       >
         {
           title &&
@@ -110,4 +115,7 @@ DropDown.propTypes = {
   startIcon: PropTypes.object,
   updateDropDown: PropTypes.shape({ current: PropTypes.func }),
   allowDisable: PropTypes.bool,
+  containerId: PropTypes.string,
+  buttonId: PropTypes.string,
+  menuId: PropTypes.string,
 };
